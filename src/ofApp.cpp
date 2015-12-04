@@ -67,7 +67,7 @@ void ofApp::draw(){
     ofDrawBitmapString("end", ofVec3f(end->x+5.0, end->y-10.0, end->z));
     
     
-    ofVec3f interpolate_point = getBezierInterpolate_vec3f(p, begin, control, end);
+    ofVec3f interpolate_point = getBezierInterpolate(p, begin, control, end);
     ofSetColor(200,0,0,200);
     ofDrawSphere(interpolate_point, 4);
     ofDrawBitmapString("interpolate", ofVec3f(interpolate_point.x+5.0, interpolate_point.y-10.0, interpolate_point.z));
@@ -90,7 +90,7 @@ void ofApp::draw(){
 
 }
 
-ofVec2f ofApp::getBezierInterpolate_vec2f(float point, ofVec2f begin, ofVec2f control, ofVec2f end) {
+ofVec2f ofApp::getBezierInterpolate(float point, ofVec2f begin, ofVec2f control, ofVec2f end) {
     
         float tp = 1 - point;
         float x = point*point*end.x + 2*point*tp*control.x + tp*tp*begin.x;
@@ -99,7 +99,7 @@ ofVec2f ofApp::getBezierInterpolate_vec2f(float point, ofVec2f begin, ofVec2f co
     
 }
 
-ofVec3f ofApp::getBezierInterpolate_vec3f(float point, ofVec3f begin, ofVec3f control, ofVec3f end) {
+ofVec3f ofApp::getBezierInterpolate(float point, ofVec3f begin, ofVec3f control, ofVec3f end) {
     
     float tp = 1 - point;
     float x = point*point*end.x + 2*point*tp*control.x + tp*tp*begin.x;

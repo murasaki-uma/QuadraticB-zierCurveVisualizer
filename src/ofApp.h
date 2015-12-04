@@ -21,8 +21,8 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
-        ofVec2f getBezierInterpolate_vec2f(float p, ofVec2f begin, ofVec2f control, ofVec2f end);
-        ofVec3f getBezierInterpolate_vec3f(float p, ofVec3f begin, ofVec3f control, ofVec3f end);
+        ofVec2f getBezierInterpolate(float p, ofVec2f begin, ofVec2f control, ofVec2f end);
+        ofVec3f getBezierInterpolate(float p, ofVec3f begin, ofVec3f control, ofVec3f end);
     
         // 3D
         ofEasyCam easyCam;
